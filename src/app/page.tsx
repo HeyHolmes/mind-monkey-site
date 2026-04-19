@@ -1,65 +1,83 @@
-import Image from "next/image";
+import habitsData from "@/data/habits.json";
+import DistressedMonkey from "@/components/DistressedMonkey";
+import StatBar from "@/components/StatBar";
+import EventLog from "@/components/EventLog";
 
 export default function Home() {
+  const { state, history } = habitsData;
+  const todayEvents = history[history.length - 1]?.events ?? [];
+
+  const statusLabel =
+    state.monkey_happiness < 20
+      ? "Mind Monkey is hurting"
+      : state.monkey_happiness < 50
+        ? "Mind Monkey is struggling"
+        : state.monkey_happiness < 80
+          ? "Mind Monkey is okay"
+          : "Mind Monkey is thriving!";
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="flex flex-col items-center min-h-screen bg-[#0a0a0a] px-4 py-8">
+      {/* Header */}
+      <div className="text-center mb-2">
+        <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
+          Mind Monkey
+        </h1>
+        <p className="text-xs font-mono text-zinc-500 mt-1">
+          tamagotchi for your brain
+        </p>
+      </div>
+
+      {/* Status badge */}
+      <div className="mb-6">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-red-950/50 text-red-400 border border-red-900/50">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+          {statusLabel}
+        </span>
+      </div>
+
+      {/* Monkey scene */}
+      <div className="relative mb-8">
+        <DistressedMonkey happiness={state.monkey_happiness} />
+
+        {/* Speech bubble */}
+        <div className="absolute -right-4 top-4 bg-zinc-800 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-300 max-w-[120px]">
+          <p>I&apos;m hurting...</p>
+          <div className="absolute -left-2 top-4 w-0 h-0 border-t-4 border-b-4 border-r-8 border-transparent border-r-zinc-800" />
+        </div>
+      </div>
+
+      {/* Stat bars */}
+      <div className="w-full max-w-sm space-y-4 mb-8">
+        <StatBar
+          label="Happiness"
+          value={state.monkey_happiness}
+          color="#ff6b9d"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <StatBar label="Health" value={state.monkey_health} color="#44ff88" />
+
+        {/* Streak */}
+        <div className="flex items-center justify-between pt-2 border-t border-zinc-800">
+          <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
+            Streak
+          </span>
+          <span className="text-sm font-mono text-zinc-400">
+            {state.streak_days} days
+          </span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+
+      {/* Event log */}
+      <div className="w-full max-w-sm mb-8">
+        <EventLog events={todayEvents} />
+      </div>
+
+      {/* Footer */}
+      <footer className="text-center mt-auto pt-8 pb-4">
+        <p className="text-[10px] font-mono text-zinc-600">
+          mymindmonkey.com
+        </p>
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "version": "0.1",
+    "last_updated": "2026-04-19T14:20:18.853320",
+    "owner": "Allan"
+  },
+  "state": {
+    "monkey_happiness": 15,
+    "monkey_health": 25,
+    "current_visual": "crying_hurt_monkey",
+    "streak_days": 0,
+    "daily_goal_met": false
+  },
+  "history": [
+    {
+      "date": "2026-04-19T14:20:18.853320",
+      "events": [
+        {
+          "type": "sleep",
+          "note": "slept like shit",
+          "impact": {
+            "happiness": -5,
+            "health": -10
+          }
+        },
+        {
+          "type": "alcohol",
+          "note": "3 beers at Sound and Fury",
+          "impact": {
+            "happiness": -30,
+            "health": -15
+          }
+        }
+      ],
+      "end_state": {
+        "happiness": 15,
+        "health": 25
+      }
+    }
+  ]
+}
