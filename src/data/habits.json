@@ -1,12 +1,12 @@
 {
   "metadata": {
     "version": "0.1",
-    "last_updated": "2026-04-19T15:11:52.092243",
+    "last_updated": "2026-04-19T15:15:52.144566",
     "owner": "Allan"
   },
   "state": {
-    "monkey_happiness": 5,
-    "monkey_health": 20,
+    "monkey_happiness": 0,
+    "monkey_health": 10,
     "current_visual": "crying_hurt_monkey",
     "streak_days": 0,
     "daily_goal_met": false
@@ -38,11 +38,19 @@
             "happiness": -10,
             "health": -5
           }
+        },
+        {
+          "type": "diet",
+          "note": "4 slices of pizza at Sound and Fury",
+          "impact": {
+            "happiness": -10,
+            "health": -10
+          }
         }
       ],
       "end_state": {
-        "happiness": 5,
-        "health": 20
+        "happiness": 0,
+        "health": 10
       }
     }
   ]
