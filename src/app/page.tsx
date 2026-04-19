@@ -21,7 +21,7 @@ export default function Home() {
       {/* Header */}
       <div className="text-center mb-2">
         <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
-          Mind Monkey
+          jallan&apos;s Mind Monkey
         </h1>
         <p className="text-xs font-mono text-zinc-500 mt-1">
           tamagotchi for your brain

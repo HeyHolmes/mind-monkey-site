@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mind Monkey | Tamagotchi for Your Brain",
+  title: "jallan's Mind Monkey | Tamagotchi for Your Brain",
   description:
     "A Tamagotchi for your brain — visualize your health habits in real time.",
 };
