@@ -48,7 +48,7 @@
     {
       "date": "2026-04-21T11:01:02.048482",
       "end_state": {
-        "happiness": 35
+        "happiness": 55
       },
       "events": [
         {
@@ -74,6 +74,14 @@
           },
           "note": "Logged no alcohol for yesterday.",
           "type": "no_alcohol"
+        },
+        {
+          "impact": {
+            "happiness": 20,
+            "health": 10
+          },
+          "note": "Chose tea over beer before haircut/party.",
+          "type": "intentional_choice"
         }
       ]
     }
@@ -87,7 +95,7 @@
     "current_visual": "crying_hurt_monkey",
     "daily_goal_met": false,
     "dopamine_points": 0,
-    "monkey_happiness": 35,
+    "monkey_happiness": 55,
     "monkey_health": 15,
     "streak_days": 0
   }
