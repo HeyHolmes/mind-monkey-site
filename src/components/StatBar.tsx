@@ -14,7 +14,7 @@ export default function StatBar({
           {label}
         </span>
         <span className="font-mono text-xs" style={{ color }}>
-          {value}%
+          {value}% ({value} pts)
         </span>
       </div>
       <div className="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
