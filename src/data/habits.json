@@ -1,57 +1,94 @@
 {
-  "metadata": {
-    "version": "0.1",
-    "last_updated": "2026-04-19T15:15:52.144566",
-    "owner": "Allan"
-  },
-  "state": {
-    "monkey_happiness": 0,
-    "monkey_health": 10,
-    "current_visual": "crying_hurt_monkey",
-    "streak_days": 0,
-    "daily_goal_met": false
+  "2026-04-20": {
+    "no_alcohol": true,
+    "workout": true
   },
   "history": [
     {
       "date": "2026-04-19T14:20:18.853320",
-      "events": [
-        {
-          "type": "sleep",
-          "note": "slept like shit",
-          "impact": {
-            "happiness": -5,
-            "health": -10
-          }
-        },
-        {
-          "type": "alcohol",
-          "note": "3 beers at Sound and Fury",
-          "impact": {
-            "happiness": -30,
-            "health": -15
-          }
-        },
-        {
-          "type": "alcohol",
-          "note": "One more beer (Logged via Telegram)",
-          "impact": {
-            "happiness": -10,
-            "health": -5
-          }
-        },
-        {
-          "type": "diet",
-          "note": "4 slices of pizza at Sound and Fury",
-          "impact": {
-            "happiness": -10,
-            "health": -10
-          }
-        }
-      ],
       "end_state": {
         "happiness": 0,
         "health": 10
-      }
+      },
+      "events": [
+        {
+          "impact": {
+            "happiness": -5,
+            "health": -10
+          },
+          "note": "slept like shit",
+          "type": "sleep"
+        },
+        {
+          "impact": {
+            "happiness": -30,
+            "health": -15
+          },
+          "note": "3 beers at Sound and Fury",
+          "type": "alcohol"
+        },
+        {
+          "impact": {
+            "happiness": -10,
+            "health": -5
+          },
+          "note": "One more beer (Logged via Telegram)",
+          "type": "alcohol"
+        },
+        {
+          "impact": {
+            "happiness": -10,
+            "health": -10
+          },
+          "note": "4 slices of pizza at Sound and Fury",
+          "type": "diet"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21T11:01:02.048482",
+      "end_state": {
+        "happiness": 35
+      },
+      "events": [
+        {
+          "impact": {
+            "happiness": 10,
+            "health": 5
+          },
+          "note": "Logged a healthy diet day for yesterday.",
+          "type": "diet"
+        },
+        {
+          "impact": {
+            "happiness": 15,
+            "health": 10
+          },
+          "note": "Logged a workout for yesterday.",
+          "type": "workout"
+        },
+        {
+          "impact": {
+            "happiness": 5,
+            "health": 5
+          },
+          "note": "Logged no alcohol for yesterday.",
+          "type": "no_alcohol"
+        }
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "last_updated": "2026-04-19T15:15:52.144566",
+    "owner": "Allan",
+    "version": "0.1"
+  },
+  "state": {
+    "current_visual": "crying_hurt_monkey",
+    "daily_goal_met": false,
+    "dopamine_points": 0,
+    "monkey_happiness": 35,
+    "monkey_health": 15,
+    "streak_days": 0
+  }
 }
